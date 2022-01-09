@@ -6,6 +6,8 @@
  * User Manual available at https://docs.gradle.org/7.3.3/userguide/building_java_projects.html
  */
 
+val ktorVersion = "1.6.7"
+
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.5.31"
@@ -15,6 +17,8 @@ plugins {
 }
 
 repositories {
+    jcenter()
+
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
@@ -34,6 +38,8 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
 }
 
 application {
